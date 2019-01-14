@@ -8,10 +8,10 @@ using namespace std;
 int main()
 {
     /**  an array of chars is the "same" than a ptr to char. ej:
-		const char arrayOfChars[] = "blue";
-		const char* ptrToChar = arrayOfChars;
-	*/
-	// using a pointer to char
+        const char arrayOfChars[] = "blue";
+        const char* ptrToChar = arrayOfChars;
+    */
+    // using a pointer to char
     const char* ptrToChar = "blue";
     // using a string type instead
     const string strType = "red";
@@ -23,7 +23,7 @@ int main()
     // print a string type
     cout << "strType: " << strType << endl;
 
-    // using a 2D array. first [] for how much string, and second [] for max string size
+    // using a 2D array. first [] for how much strings, and second [] for max string size
     const char color[4][10] = { "blue", "red", "orange", "yellow" };
     // calculate the static array size
     int CSize = sizeof(color) / sizeof(color[0]); //or sizeof(*color);

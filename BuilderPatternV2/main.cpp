@@ -1,25 +1,33 @@
 /**
 https://sourcemaking.com/design_patterns/builder/java/2
 Intent
-Separate the construction of a complex object from its representation so that the same construction process can create different representations.
+Separate the construction of a complex object from its representation so that the same construction process can create different 
+representations.
 Parse a complex representation, create one of several targets.
 
 Problem
-An application needs to create the elements of a complex aggregate. The specification for the aggregate exists on secondary storage and one of many representations needs to be built in primary storage.
+An application needs to create the elements of a complex aggregate. The specification for the aggregate exists on secondary storage 
+and one of many representations needs to be built in primary storage.
 
 Check list
 -Decide if a common input and many possible representations (or outputs) is the problem at hand.
 -Encapsulate the parsing of the common input in a Reader class.
--Design a standard protocol for creating all possible output representations. Capture the steps of this protocol in a Builder interface.
+-Design a standard protocol for creating all possible output representations. Capture the steps of this protocol in a Builder 
+interface.
 -Define a Builder derived class for each target representation.
 -The client creates a Reader object and a Builder object, and registers the latter with the former.
 -The client asks the Reader to “construct”.
 -The client asks the Builder to return the result.
 
 Discussion
-The forte of Builder is constructing a complex object step by step. An abstract base class declares the standard construction process, and concrete derived classes define the appropriate implementation for each step of the process. In this example, "distributed work packages" have been abstracted to be persistent and platform independent.
+The forte of Builder is constructing a complex object step by step. An abstract base class declares the standard construction process, 
+and concrete derived classes define the appropriate implementation for each step of the process. In this example, "distributed work 
+packages" have been abstracted to be persistent and platform independent.
 
-This means that the platform-specific mechanism for implementing files, queues, and concurrency pathways is defined in each platform's concrete derived class. A single "reader" object (i.e. parser) retrieves the archived specification for a DistrWorkPackage and proceeds to delegate each build step to the builder object that was registered by the client. Upon completion, the client retrieves the end result from the builder. */
+This means that the platform-specific mechanism for implementing files, queues, and concurrency pathways is defined in each platform's 
+concrete derived class. A single "reader" object (i.e. parser) retrieves the archived specification for a DistrWorkPackage and proceeds 
+to delegate each build step to the builder object that was registered by the client. Upon completion, the client retrieves the end 
+result from the builder. */
 
 #include <iostream>
 #include <stdio.h>
@@ -101,7 +109,12 @@ private:
 };
 
 PersistenceAttribute input[NUM_ENTRIES]{
-    {File, "state.dat"}, {File, "config.sys"}, {Queue, "compute"}, {Queue, "log"}, {Pathway, "authentication"}, {Pathway, "error processing"}
+    {File, "state.dat"}, 
+	{File, "config.sys"}, 
+	{Queue, "compute"}, 
+	{Queue, "log"}, 
+	{Pathway, "authentication"}, 
+	{Pathway, "error processing"}
 };
 
 int main()

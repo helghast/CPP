@@ -1,8 +1,12 @@
 /**
 http://en.wikipedia.org/wiki/A*
-original code from https://stackoverflow.com/questions/26210108/a-star-shortest-path-algorithm (added some improvements and optimizations)
+original code from https://stackoverflow.com/questions/26210108/a-star-shortest-path-algorithm 
+(added some improvements and optimizations)
 
-In computer science, A* (pronounced "A star") is a computer algorithm that is widely used in pathfinding and graph traversal, which is the process of finding a path between multiple points, called "nodes". It enjoys widespread use due to its performance and accuracy. However, in practical travel-routing systems, it is generally outperformed by algorithms which can pre-process the graph to attain better performance, although other work has found A* to be superior to other approaches. */
+In computer science, A* (pronounced "A star") is a computer algorithm that is widely used in pathfinding and graph traversal, which is 
+the process of finding a path between multiple points, called "nodes". It enjoys widespread use due to its performance and accuracy. 
+However, in practical travel-routing systems, it is generally outperformed by algorithms which can pre-process the graph to attain 
+better performance, although other work has found A* to be superior to other approaches. */
 #include <istream>
 #include <iostream>
 #include <iomanip>
@@ -36,7 +40,8 @@ private:
     int level; // total distance already travelled to reach the Node
     int priority;  // priority=level+remaining distance estimate // smaller: higher priority
 public:
-    Node(const int xPos, const int yPos, const int level, const int priority) : xPos(xPos), yPos(yPos), level(level), priority(priority){}
+    Node(const int xPos, const int yPos, const int level, const int priority) 
+		: xPos(xPos), yPos(yPos), level(level), priority(priority){}
     int getxPos() const {return xPos;}
     int getyPos() const {return yPos;}
     int getLevel() const {return level;}
@@ -134,7 +139,8 @@ string pathFind(const int xStart, const int yStart, const int xFinish, const int
             xdx = x + dx[i];
             ydy = y + dy[i];
 
-            if (!(xdx < 0 || xdx > mapWidth - 1 || ydy < 0 || ydy > mapHeight - 1 || map[xdx][ydy] == 1 || closedNodesMap[xdx][ydy] == 1))
+            if (!(xdx < 0 || xdx > mapWidth - 1 || ydy < 0 || ydy > mapHeight - 1 || map[xdx][ydy] == 1 
+				|| closedNodesMap[xdx][ydy] == 1))
             {
                 m0 = new Node(xdx, ydy, n0->getLevel(), n0->getPriority()); // generate a child Node
                 m0->nextLevel(i);
@@ -155,7 +161,8 @@ string pathFind(const int xStart, const int yStart, const int xFinish, const int
                     openNode = m0Priority; // update the priority info
                     direction = updateDirection(i); // update the parent direction info
 
-                    // replace the Node by emptying one pq to the other one except the Node to be replaced will be ignored and the new Node will be pushed in instead
+                    /* replace the Node by emptying one pq to the other one except the Node to be replaced will be ignored and the 
+					new Node will be pushed in instead */
                     const Node& replaceNode = pq[pqi].top();
                     while (!(replaceNode.getxPos() == xdx && replaceNode.getyPos() == ydy))
                     {

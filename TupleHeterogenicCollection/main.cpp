@@ -1,21 +1,25 @@
-#include <tuple>
-#include <iostream>
-#include <string>
-#include <stdexcept>
-
 /**
 https://en.cppreference.com/w/cpp/utility/tuple
 Class template std::tuple is a fixed-size collection of heterogeneous values. It is a generalization of std::pair.
 
 http://www.cplusplus.com/reference/tuple/
 Tuple library
-Tuples are objects that pack elements of -possibly- different types together in a single object, just like pair objects do for pairs of elements, but generalized for any number of elements.
-Conceptually, they are similar to plain old data structures (C-like structs) but instead of having named data members, its elements are accessed by their order in the tuple.
-The selection of particular elements within a tuple is done at the template-instantiation level, and thus, it must be specified at compile-time, with helper functions such as get and tie.
-The tuple class is closely related to the pair class (defined in header <utility>): Tuples can be constructed from pairs, and pairs can be treated as tuples for certain purposes.
+Tuples are objects that pack elements of -possibly- different types together in a single object, just like pair objects do for pairs 
+of elements, but generalized for any number of elements.
+Conceptually, they are similar to plain old data structures (C-like structs) but instead of having named data members, its elements 
+are accessed by their order in the tuple.
+The selection of particular elements within a tuple is done at the template-instantiation level, and thus, it must be specified at 
+compile-time, with helper functions such as get and tie.
+The tuple class is closely related to the pair class (defined in header <utility>): Tuples can be constructed from pairs, and pairs 
+can be treated as tuples for certain purposes.
 
-array containers also have certain tuple-like functionalities.
-*/
+array containers also have certain tuple-like functionalities. */
+
+#include <tuple>
+#include <iostream>
+#include <string>
+#include <stdexcept>
+
 std::tuple<double, char, std::string> get_student(int id)
 {
     if (id == 0) return std::make_tuple(3.8, 'A', "Lisa Simpson");

@@ -6,18 +6,27 @@ Publish interface in an inheritance hierarchy, and bury implementation in its ow
 Beyond encapsulation, to insulation
 
 Problem
-“Hardening of the software arteries” has occurred by using subclassing of an abstract base class to provide alternative implementations. This locks in compile-time binding between interface and implementation. The abstraction and implementation cannot be independently extended or composed.
+“Hardening of the software arteries” has occurred by using subclassing of an abstract base class to provide alternative 
+implementations. This locks in compile-time binding between interface and implementation. The abstraction and implementation cannot be 
+independently extended or composed.
 
 Check list
--Decide if two orthogonal dimensions exist in the domain. These independent concepts could be: abstraction/platform, or domain/infrastructure, or front-end/back-end, or interface/implementation.
+-Decide if two orthogonal dimensions exist in the domain. These independent concepts could be: abstraction/platform, or 
+domain/infrastructure, or front-end/back-end, or interface/implementation.
 -Design the separation of concerns: what does the client want, and what do the platforms provide.
--Design a platform-oriented interface that is minimal, necessary, and sufficient. Its goal is to decouple the abstraction from the platform.
+-Design a platform-oriented interface that is minimal, necessary, and sufficient. Its goal is to decouple the abstraction from the 
+platform.
 -Define a derived class of that interface for each platform.
 -Create the abstraction base class that “has a” platform object and delegates the platform-oriented functionality to it.
 -Define specializations of the abstraction class if desired.
 
 Discussion.
-The motivation is to decouple the Time interface from the Time implementation, while still allowing the abstraction and the realization to each be modelled with their own inheritance hierarchy. The implementation classes below are straight-forward. The interface classes are a little more subtle. Routinely, a Bridge pattern interface hierarchy "has a" implementation class. Here the interface base class "has a" a pointer to the implementation base class, and each class in the interface hierarchy is responsible for populating the base class pointer with the correct concrete implementation class. Then all requests from the client are simply delegated by the interface class to the encapsulated implementation class. */
+The motivation is to decouple the Time interface from the Time implementation, while still allowing the abstraction and the 
+realization to each be modelled with their own inheritance hierarchy. The implementation classes below are straight-forward. 
+The interface classes are a little more subtle. Routinely, a Bridge pattern interface hierarchy "has a" implementation class. 
+Here the interface base class "has a" a pointer to the implementation base class, and each class in the interface hierarchy is 
+responsible for populating the base class pointer with the correct concrete implementation class. Then all requests from the client 
+are simply delegated by the interface class to the encapsulated implementation class. */
 
 #include <iostream>
 #include <iomanip> //if do not have this library use cout.precision()
@@ -41,7 +50,8 @@ protected:
 };
 class ZuluTimeImp : public TimeImp{
 public:
-    ZuluTimeImp(const int hr, const int min, const int zone) : TimeImp(hr, min){ strcpy(zone_, zone == 5 ? " Eastern Standard Time" : " Central Standard Time"); }
+    ZuluTimeImp(const int hr, const int min, const int zone) 
+		: TimeImp(hr, min){ strcpy(zone_, zone == 5 ? " Eastern Standard Time" : " Central Standard Time"); }
     void tell(){cout << "time is " << setw(2) << setfill('4') << hr << min << zone_ << endl;}
 protected:
     char zone_[30];

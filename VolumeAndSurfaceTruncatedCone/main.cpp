@@ -91,13 +91,13 @@ int main()
         return 0;
     }
 
+    cout << endl << "Step by step calculation" << endl;
+    cout << "************************" << endl;
+    
     /** find height x of the similar triangle using Thales's Theorem (Similar triangles)
     ej: R = 6; r = 2; h = 10; a/b=c/d; 10+x/x=6/2; 20+2x=6x; 20=4x; 5=x */
     const float similarConeHeight = (truncatedConeHeight * truncatedConeUpperRadius) / (coneBaseRadius - truncatedConeUpperRadius);
     const float fullConeHeight = truncatedConeHeight + similarConeHeight;
-
-    cout << endl << "Step by step calculation" << endl;
-    cout << "************************" << endl;
 
     cout << "height of the similar upper cone: " << similarConeHeight << meters << endl;
     cout << "full Cone Height: " << fullConeHeight << meters << endl;

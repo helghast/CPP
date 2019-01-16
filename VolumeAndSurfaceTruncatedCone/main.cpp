@@ -62,7 +62,7 @@ int main()
     cout << "truncated Cone Upper Radius (use . for floats): ";
     cin >> truncatedConeUpperRadius;
 
-    float truncatedConeHeight;
+    float truncatedConeHeight; // height of the truncated cone = h
     cout << "truncated Cone Height (use . for floats): ";
     cin >> truncatedConeHeight;
 

@@ -4,4 +4,5 @@
 
 Step by Step code explanation of how to find volume and surface area of a truncated cone.
 
-Thanks to https://www.unicoos.com math class tutorial.
+Thanks to https://www.unicoos.com math class tutorial. 
+(https://www.youtube.com/watch?v=MeVsF--h7qU)

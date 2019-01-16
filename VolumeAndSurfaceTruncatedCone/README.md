@@ -9,4 +9,4 @@ Thanks to https://www.unicoos.com math class tutorial.
 
 http://www.analyzemath.com/Geometry_calculators/surface_volume_frustum.html
 
-Try code here: cpp.sh/3wqc7
+Try code here: http://cpp.sh/3wqc7

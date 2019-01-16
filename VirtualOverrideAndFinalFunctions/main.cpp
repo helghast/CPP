@@ -14,7 +14,7 @@ protected:
 
 class Fee : public Foo{
 public:
-    virtual void func2() override { func4(__PRETTY_FUNCTION__); };
+    /*virtual */void func2() override { func4(__PRETTY_FUNCTION__); };
     //virtual void func3() override; //this will make a compilation error
 };
 

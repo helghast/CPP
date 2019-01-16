@@ -8,3 +8,5 @@ Thanks to https://www.unicoos.com math class tutorial.
 (https://www.youtube.com/watch?v=MeVsF--h7qU)
 
 http://www.analyzemath.com/Geometry_calculators/surface_volume_frustum.html
+
+Try code here: cpp.sh/3wqc7

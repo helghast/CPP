@@ -114,7 +114,7 @@ int main()
     cout << "full Cone Volume = " << fullConeVolume << cubicMeters << endl;
     cout << "truncated Cone Volume = " << truncatedConeVolume << cubicMeters << endl;
 
-    /** find Cones Generatrixs (G) / Traingles Hypotenuses */
+    /** find Cones Generatrixs (G) / Triangles Hypotenuses */
     const float similarConeGeneratrix = sqrt(pow(similarConeHeight, 2) + rSquare);
     const float fullConeGeneratrix = sqrt(pow(fullConeHeight, 2) + RSquare);
     const float truncatedConeGeneratrix = fullConeGeneratrix - similarConeGeneratrix;

@@ -1,6 +1,7 @@
 /**
 https://es.wikipedia.org/wiki/Tronco_de_cono
 https://www.youtube.com/watch?v=MeVsF--h7qU
+http://www.analyzemath.com/Geometry_calculators/surface_volume_frustum.html
 
 Given a cone with the sectioned tip, knowing radius of the upper section 'r', the base radius 'R' and the height of the
 truncated cone 'h', find the Surface Area and Volume of the truncated cone.
@@ -52,6 +53,18 @@ static const string meters = " m";
 static const string squareMeters = " m^2";
 static const string cubicMeters = " m^3";
 
+/** Otherwise, you can use the direct formula: A = PI(R + r) * sqrt((R - r)^2 + h^2) */
+static float TruncatedConeArea(const float R, const float r, const float h)
+{
+    return PI * (R + r) * sqrt(pow(R - r, 2) + pow(h, 2));
+}
+
+/** Otherwise, you can use the direct formula: V = (PI/3) * h * (R^2 + r^2 + R * r) */
+static float TruncatedConeVolume(const float R, const float r, const float h)
+{
+    return (PI / 3.0f) * h * (pow(R, 2) + pow(r, 2) + R * r);
+}
+
 int main()
 {
     float coneBaseRadius; // cone base radius = R
@@ -83,7 +96,8 @@ int main()
     const float similarConeHeight = (truncatedConeHeight * truncatedConeUpperRadius) / (coneBaseRadius - truncatedConeUpperRadius);
     const float fullConeHeight = truncatedConeHeight + similarConeHeight;
 
-    cout << endl;
+    cout << endl << "Step by step calculation" << endl;
+    cout << "************************" << endl;
 
     cout << "height of the similar upper cone: " << similarConeHeight << meters << endl;
     cout << "full Cone Height: " << fullConeHeight << meters << endl;
@@ -114,7 +128,7 @@ int main()
     cout << "full Cone Volume = " << fullConeVolume << cubicMeters << endl;
     cout << "truncated Cone Volume = " << truncatedConeVolume << cubicMeters << endl;
 
-    /** find Cones Generatrixs (G) / Triangles Hypotenuses */
+    /** find Cones Generatrixs (G) / Traingles Hypotenuses */
     const float similarConeGeneratrix = sqrt(pow(similarConeHeight, 2) + rSquare);
     const float fullConeGeneratrix = sqrt(pow(fullConeHeight, 2) + RSquare);
     const float truncatedConeGeneratrix = fullConeGeneratrix - similarConeGeneratrix;
@@ -137,5 +151,12 @@ int main()
     cout << "full Cone Surface Area = " << fullConeSurfaceArea << squareMeters << endl;
     cout << "truncated Cone Surface Area = " << truncatedConeSurfaceArea << squareMeters << endl;
 
+    cout << endl;
+
+    /** Direct calculation */
+    cout << "Direct calculation using formula" << endl;
+    cout << "********************************" << endl;
+    cout << "Volume: " << TruncatedConeVolume(coneBaseRadius, truncatedConeUpperRadius, truncatedConeHeight) << cubicMeters << endl;
+    cout << "Area: " << TruncatedConeArea(coneBaseRadius, truncatedConeUpperRadius, truncatedConeHeight) << squareMeters << endl;
     return 0;
 }

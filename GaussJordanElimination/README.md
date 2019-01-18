@@ -9,8 +9,13 @@ matrix. The Gauss-Jordan method continues the transformation process until obtai
 ![alt text](maxresdefault.jpg)
 
 Resources:
+
 http://archive.oreilly.com/oreillyschool/courses/data-structures-algorithms/mathematical.html
+
 https://es.wikipedia.org/wiki/Eliminación_de_Gauss-Jordan
+
 https://en.wikipedia.org/wiki/Gaussian_elimination
+
 https://en.wikipedia.org/wiki/Pivot_element
+
 https://www.geeksforgeeks.org/program-check-diagonal-matrix-scalar-matrix/

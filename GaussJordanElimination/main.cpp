@@ -1,6 +1,6 @@
 /**
 http://archive.oreilly.com/oreillyschool/courses/data-structures-algorithms/mathematical.html
-https://es.wikipedia.org/wiki/Eliminación_de_Gauss-Jordan
+https://es.wikipedia.org/wiki/EliminaciÃ³n_de_Gauss-Jordan
 https://en.wikipedia.org/wiki/Gaussian_elimination
 https://en.wikipedia.org/wiki/Pivot_element
 https://www.geeksforgeeks.org/program-check-diagonal-matrix-scalar-matrix/
@@ -104,21 +104,21 @@ static void backSubstitution(const vector<vector<double>>& a, vector<double>& x)
 {
     const int n = a.size();
     for (int i = n - 1; i >= 0; --i)
+    {
+	//x is an array whose values correspond to the values of x,y,z...
+	x[i] = a[i][n];
+	//make the variable to be calculated equal to the rhs(right hand side) of the last equation
+	for (int j = i + 1; j < n; ++j)
 	{
-		//x is an array whose values correspond to the values of x,y,z...
-		x[i] = a[i][n];
-		//make the variable to be calculated equal to the rhs(right hand side) of the last equation
-		for (int j = i + 1; j < n; ++j)
+		if (j != i)
 		{
-			if (j != i)
-			{
-				//then subtract all the lhs (left hand side) values except the coefficient of the variable whose value is being calculated
-				x[i] -= a[i][j] * x[j];
-			}
+			//then subtract all the lhs (left hand side) values except the coefficient of the variable whose value is being calculated
+			x[i] -= a[i][j] * x[j];
 		}
-		//now finally divide the rhs (right hand side) by the coefficient of the variable to be calculated
-		x[i] /= a[i][i];
 	}
+	//now finally divide the rhs (right hand side) by the coefficient of the variable to be calculated
+	x[i] /= a[i][i];
+    }
 }
 
 //a diagonal matrix is a square matrix in which the entries are all null except for the main diagonal, and these can be null or not.
@@ -156,7 +156,7 @@ int main()
     //vector<vector<double>> matrix{ {1,3,5,9}, {2,7,2,2}, {2,6,10,18} };
     //no equation uses more than two variables; note that the coefficient of x in the first equation is zero.
     //vector<vector<double>> matrix{ {0,2,1,7}, {1,2,0,3}, {2,0,5,3} }; //infinite solution for x
-    //However, if you reorder the rows—which ultimately should have no effect on the solution—a solution can be found.
+    //However, if you reorder the rowsâ€”which ultimately should have no effect on the solutionâ€”a solution can be found.
     //vector<vector<double>> matrix{ {1,2,0,3}, {0,2,1,7}, {2,0,5,3} };
     //diagonal matrix
     //vector<vector<double>> matrix{ {1,0,0,3}, {0,1,0,7}, {0,0,1,4} };

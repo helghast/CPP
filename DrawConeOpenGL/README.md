@@ -10,20 +10,20 @@ We also add an FPS counter in the window title. you can use a fps limiter funcio
 
 -First get glut ZIP
 
-![alt text](0 get glut zip.PNG)
+![alt text](0_get_glut_zip.PNG)
 
 -Copy glut32.dll to Windows/System32 folder
 
-![alt text](1 copy glut32.dll to system32.PNG)
+![alt text](1_copy_glut32.dll_to_system32.PNG)
 
 -Copy glut.h to Code::Blocks MinGW/include/GL folder
 
-![alt text](2 copy gluth to mingw gl includes.PNG)
+![alt text](2_copy_gluth_to_mingw_gl_includes.PNG)
 
 -Copy glut32.lib to Code::Blocks MinGW/lib/ folder
 
-![alt text](3 copy glut32.lib to mingw libs.PNG)
+![alt text](3_copy_glut32.lib_to_mingw_libs.PNG)
 
 -Add  library and options (-lopengl32 and -lglu32) to project build options
 
-![alt text](4 add  library and options to project build options.PNG)
+![alt text](4_add_library_and_options_to_project_build_options.PNG)

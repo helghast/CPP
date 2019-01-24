@@ -124,7 +124,7 @@ void reshapeCone(const int x, const int y)
 
 void idleCone()
 {
-    // you can use xRotated, yRotatedor zRotated to rotate on the axis you want
+    // you can use xRotated, yRotated or zRotated to rotate on the axis you want
     //xRotated += ROTATE_SPEED;
     yRotated += ROTATE_SPEED;
     //zRotated += ROTATE_SPEED;
@@ -137,7 +137,7 @@ void idleCone()
 
 void idleCone(int)
 {
-    // you can use xRotated, yRotatedor zRotated to rotate on the axis you want
+    // you can use xRotated, yRotated or zRotated to rotate on the axis you want
     //xRotated += milliseconds * ROTATE_SPEED;
     yRotated += milliseconds * ROTATE_SPEED;
     //zRotated += milliseconds * ROTATE_SPEED;

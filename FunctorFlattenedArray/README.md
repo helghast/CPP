@@ -11,6 +11,8 @@ The advantages of using a flat array are improved performance and interoperabili
 
 ![alt text](https://upload.wikimedia.org/wikipedia/commons/thumb/3/3d/CPT-arrays-2d.svg/220px-CPT-arrays-2d.svg.png)
 
+![alt text](flattenedArray.png)
+
 ## Resources:
 
 https://www.dotnetperls.com/flatten-array

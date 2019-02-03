@@ -104,7 +104,7 @@ int main()
 	mfp.scan(doc);
 	mfp.scan(doc);
 
-	// breaks ISP. simple printer does not need scan and fax method
+	// breaks ISP and YAGNI. simple printer does not need scan and fax method
 	SimplePrinter sp;
 	sp.print(doc);
 	sp.scan(doc);

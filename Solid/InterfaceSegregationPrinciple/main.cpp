@@ -94,15 +94,15 @@ public:
 
 int main()
 {
-    cout << "Interface Segregation Principle" << endl;
+	cout << "Interface Segregation Principle" << endl;
 
-    Document doc;
+	Document doc;
 
-    // not breaks ISP
-    MultyFunctionPrinter mfp;
-    mfp.print(doc);
-    mfp.scan(doc);
-    mfp.scan(doc);
+	// not breaks ISP
+	MultyFunctionPrinter mfp;
+	mfp.print(doc);
+	mfp.scan(doc);
+	mfp.scan(doc);
 
 	// breaks ISP. simple printer does not need scan and fax method
 	SimplePrinter sp;

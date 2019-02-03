@@ -210,5 +210,5 @@ int main()
 	cout << "Can duck fly? " << CanFly(&duck) << endl;
 	cout << "Can penguin fly? " << CanFly(&penguin) << endl;
 	cout << "Can ostrich fly? " << CanFly(&ostrich) << endl;
-    return 0;
+	return 0;
 }

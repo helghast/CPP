@@ -133,5 +133,5 @@ int main()
 	ICompleMachine* icm = new OtherComplexMachine(printer, cm);
 	icm->print(doc);
 	icm->scan(doc);
-    return 0;
+	return 0;
 }

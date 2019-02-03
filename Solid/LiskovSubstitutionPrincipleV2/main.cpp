@@ -159,36 +159,36 @@ static string CanFly(Bird* bird)
 
 int main()
 {
-    Duck duck;
-    duck.fly(); // OK
+	Duck duck;
+	duck.fly(); // OK
 
-    Penguin penguin;
-    penguin.fly(); // BAD
+	Penguin penguin;
+	penguin.fly(); // BAD
 
-    Ostrich ostrich; // BAD
-    ostrich.fly();
+	Ostrich ostrich; // BAD
+	ostrich.fly();
 
-    Penguin1 p1; // BAD
-    p1.fly();
-    p1.swim();
+	Penguin1 p1; // BAD
+	p1.fly();
+	p1.swim();
 
-    Ostrich1 o1; // BAD
-    o1.fly();
-    o1.swim();
+	Ostrich1 o1; // BAD
+	o1.fly();
+	o1.swim();
 
-    Duck2 d2; // OK
-    d2.breathe();
-    d2.fly();
-    d2.swim();
+	Duck2 d2; // OK
+	d2.breathe();
+	d2.fly();
+	d2.swim();
 
-    Penguin2 p2; // OK
+	Penguin2 p2; // OK
 	p2.breathe();
 	p2.swim();
 
 	Duck3 d3; // OK
-    d3.breathe();
-    d3.fly();
-    d3.swim();
+	d3.breathe();
+	d3.fly();
+	d3.swim();
 
 	Penguin3 p3; // OK
 	p3.breathe();

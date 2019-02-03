@@ -42,7 +42,7 @@ public:
 	void setHeigth(const int height) override { this->width = this->height = height; }
 };
 
-// this violates the principle
+// this violates the principle if you use a Square
 void process(Rectangle& rectangle)
 {
 	const int w = rectangle.getWidth();
@@ -61,7 +61,7 @@ struct RectangleFactory
 // END v1
 
 // START v2
-/** another solution. make a base abstract class that only has the area method. size properties are for subclasses intead.
+/** another solution. make a base abstract class that only has the area method. size properties are for subclasses instead.
 but because you cannot instantiate an abstract class, every new shape subclass instance must be a pointer, and the Factory design
 pattern is an example of returning a pointer to an abstract class object.
 https://stackoverflow.com/questions/2861270/returning-an-abstract-class-from-a-function */

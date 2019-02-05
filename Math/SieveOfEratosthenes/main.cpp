@@ -61,20 +61,20 @@ void SieveOfEratosthenesV2(const int n)
 void SieveOfEratosthenesV3(const int n)
 {
 	bool isPrime;
-    for(int number = 2; number <= n; ++number)
-    {
-        isPrime = true;
-        for(int i = 2; i < number; ++i)
-        {
-            if((number % i) == 0)
-                isPrime = false;
-        }
+	for(int number = 2; number <= n; ++number)
+	{
+		isPrime = true;
+		for(int i = 2; i < number; ++i)
+		{
+			if((number % i) == 0)
+				isPrime = false;
+		}
 
-        if(isPrime)
-            cout << number << " ";
-    }
+		if(isPrime)
+			cout << number << " ";
+	}
 
-    cout << (isPrime ? "Even" : "Odd") << endl;
+	cout << (isPrime ? "Even" : "Odd") << endl;
 }
 
 // Driver Program to test above function
@@ -86,14 +86,14 @@ int main()
 
 	SieveOfEratosthenesV3(n);
 
-    n = 100;
-    cout << "Following are the prime numbers smaller or equal to " << n << endl;
-    SieveOfEratosthenes(n);
+	n = 100;
+	cout << "Following are the prime numbers smaller or equal to " << n << endl;
+	SieveOfEratosthenes(n);
 
-    cout << endl;
+	cout << endl;
 
 	// simplest way
-    SieveOfEratosthenesV2(n);
+	SieveOfEratosthenesV2(n);
 
-    return 0;
+	return 0;
 }
